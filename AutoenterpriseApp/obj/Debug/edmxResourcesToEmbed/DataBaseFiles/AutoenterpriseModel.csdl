@@ -1,0 +1,314 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="autoenterpriseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">
+  <EntityType Name="brigades">
+    <Key>
+      <PropertyRef Name="idBrigade" />
+    </Key>
+    <Property Name="idBrigade" Type="Int32" Nullable="false" />
+    <Property Name="nameBrigade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <NavigationProperty Name="brigadiers" Relationship="Self.FK_brigadiers_brigades" FromRole="brigades" ToRole="brigadiers" />
+    <NavigationProperty Name="drivers" Relationship="Self.FK_drivers_brigades" FromRole="brigades" ToRole="drivers" />
+    <NavigationProperty Name="service" Relationship="Self.FK_service_brigades" FromRole="brigades" ToRole="service" />
+  </EntityType>
+  <EntityType Name="brigadiers">
+    <Key>
+      <PropertyRef Name="idBrigadier" />
+    </Key>
+    <Property Name="idBrigadier" Type="Int32" Nullable="false" />
+    <Property Name="nameBrigadier" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idBrigade" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="brigades" Relationship="Self.FK_brigadiers_brigades" FromRole="brigadiers" ToRole="brigades" />
+    <NavigationProperty Name="masters" Relationship="Self.FK_masters_brigadiers" FromRole="brigadiers" ToRole="masters" />
+  </EntityType>
+  <EntityType Name="destinations">
+    <Key>
+      <PropertyRef Name="idDestintaion" />
+    </Key>
+    <Property Name="idDestintaion" Type="Int32" Nullable="false" />
+    <Property Name="departureDestination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="terminalDestination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="codeDestination" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
+    <NavigationProperty Name="transport" Relationship="Self.FK_transport_destinations" FromRole="destinations" ToRole="transport" />
+  </EntityType>
+  <EntityType Name="drivers">
+    <Key>
+      <PropertyRef Name="idDriver" />
+    </Key>
+    <Property Name="idDriver" Type="Int32" Nullable="false" />
+    <Property Name="nameDriver" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idBrigade" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="brigades" Relationship="Self.FK_drivers_brigades" FromRole="drivers" ToRole="brigades" />
+    <NavigationProperty Name="transport" Relationship="Self.FK_transport_drivers" FromRole="drivers" ToRole="transport" />
+  </EntityType>
+  <EntityType Name="foremens">
+    <Key>
+      <PropertyRef Name="idForemen" />
+    </Key>
+    <Property Name="idForemen" Type="Int32" Nullable="false" />
+    <Property Name="nameForemen" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idMaster" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="masters" Relationship="Self.FK_foremens_masters" FromRole="foremens" ToRole="masters" />
+    <NavigationProperty Name="landchiefs" Relationship="Self.FK_landchiefs_foremens" FromRole="foremens" ToRole="landchiefs" />
+  </EntityType>
+  <EntityType Name="landchiefs">
+    <Key>
+      <PropertyRef Name="idLandchief" />
+    </Key>
+    <Property Name="idLandchief" Type="Int32" Nullable="false" />
+    <Property Name="nameLandchief" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idForemen" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="foremens" Relationship="Self.FK_landchiefs_foremens" FromRole="landchiefs" ToRole="foremens" />
+  </EntityType>
+  <EntityType Name="masters">
+    <Key>
+      <PropertyRef Name="idMaster" />
+    </Key>
+    <Property Name="idMaster" Type="Int32" Nullable="false" />
+    <Property Name="nameMaster" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idBrigadier" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="brigadiers" Relationship="Self.FK_masters_brigadiers" FromRole="masters" ToRole="brigadiers" />
+    <NavigationProperty Name="foremens" Relationship="Self.FK_foremens_masters" FromRole="masters" ToRole="foremens" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="idService" />
+    </Key>
+    <Property Name="idService" Type="Int32" Nullable="false" />
+    <Property Name="nameService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idBrigade" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="brigades" Relationship="Self.FK_service_brigades" FromRole="service" ToRole="brigades" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="String" MaxLength="128" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="principal_id" Type="Int32" Nullable="false" />
+    <Property Name="diagram_id" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="version" Type="Int32" />
+    <Property Name="definition" Type="Binary" MaxLength="Max" FixedLength="false" />
+  </EntityType>
+  <EntityType Name="transport">
+    <Key>
+      <PropertyRef Name="idTransport" />
+    </Key>
+    <Property Name="idTransport" Type="Int32" Nullable="false" />
+    <Property Name="mileageTransport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="dateOfReceiptTransport" Type="DateTime" Precision="0" />
+    <Property Name="dateOfDeductionTransport" Type="DateTime" Precision="0" />
+    <Property Name="brandTransport" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idDriver" Type="Int32" Nullable="false" />
+    <Property Name="idTransportType" Type="Int32" Nullable="false" />
+    <Property Name="idDestination" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="destinations" Relationship="Self.FK_transport_destinations" FromRole="transport" ToRole="destinations" />
+    <NavigationProperty Name="drivers" Relationship="Self.FK_transport_drivers" FromRole="transport" ToRole="drivers" />
+    <NavigationProperty Name="transport_type" Relationship="Self.FK_transport_transport_type" FromRole="transport" ToRole="transport_type" />
+  </EntityType>
+  <EntityType Name="transport_type">
+    <Key>
+      <PropertyRef Name="idTransportType" />
+    </Key>
+    <Property Name="idTransportType" Type="Int32" Nullable="false" />
+    <Property Name="nameTransportType" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="capacityTransportType" Type="Int32" Nullable="false" />
+    <NavigationProperty Name="transport" Relationship="Self.FK_transport_transport_type" FromRole="transport_type" ToRole="transport" />
+  </EntityType>
+  <Association Name="FK_brigadiers_brigades">
+    <End Role="brigades" Type="Self.brigades" Multiplicity="1" />
+    <End Role="brigadiers" Type="Self.brigadiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brigades">
+        <PropertyRef Name="idBrigade" />
+      </Principal>
+      <Dependent Role="brigadiers">
+        <PropertyRef Name="idBrigade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_drivers_brigades">
+    <End Role="brigades" Type="Self.brigades" Multiplicity="1" />
+    <End Role="drivers" Type="Self.drivers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brigades">
+        <PropertyRef Name="idBrigade" />
+      </Principal>
+      <Dependent Role="drivers">
+        <PropertyRef Name="idBrigade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_service_brigades">
+    <End Role="brigades" Type="Self.brigades" Multiplicity="1" />
+    <End Role="service" Type="Self.service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brigades">
+        <PropertyRef Name="idBrigade" />
+      </Principal>
+      <Dependent Role="service">
+        <PropertyRef Name="idBrigade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_masters_brigadiers">
+    <End Role="brigadiers" Type="Self.brigadiers" Multiplicity="1" />
+    <End Role="masters" Type="Self.masters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brigadiers">
+        <PropertyRef Name="idBrigadier" />
+      </Principal>
+      <Dependent Role="masters">
+        <PropertyRef Name="idBrigadier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transport_destinations">
+    <End Role="destinations" Type="Self.destinations" Multiplicity="1" />
+    <End Role="transport" Type="Self.transport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="destinations">
+        <PropertyRef Name="idDestintaion" />
+      </Principal>
+      <Dependent Role="transport">
+        <PropertyRef Name="idDestination" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transport_drivers">
+    <End Role="drivers" Type="Self.drivers" Multiplicity="1" />
+    <End Role="transport" Type="Self.transport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="drivers">
+        <PropertyRef Name="idDriver" />
+      </Principal>
+      <Dependent Role="transport">
+        <PropertyRef Name="idDriver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_foremens_masters">
+    <End Role="masters" Type="Self.masters" Multiplicity="1" />
+    <End Role="foremens" Type="Self.foremens" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="masters">
+        <PropertyRef Name="idMaster" />
+      </Principal>
+      <Dependent Role="foremens">
+        <PropertyRef Name="idMaster" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_landchiefs_foremens">
+    <End Role="foremens" Type="Self.foremens" Multiplicity="1" />
+    <End Role="landchiefs" Type="Self.landchiefs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="foremens">
+        <PropertyRef Name="idForemen" />
+      </Principal>
+      <Dependent Role="landchiefs">
+        <PropertyRef Name="idForemen" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transport_transport_type">
+    <End Role="transport_type" Type="Self.transport_type" Multiplicity="1" />
+    <End Role="transport" Type="Self.transport" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transport_type">
+        <PropertyRef Name="idTransportType" />
+      </Principal>
+      <Dependent Role="transport">
+        <PropertyRef Name="idTransportType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <EntityContainer Name="autoenterpriseEntities" annotation:LazyLoadingEnabled="true">
+    <EntitySet Name="brigades" EntityType="Self.brigades" />
+    <EntitySet Name="brigadiers" EntityType="Self.brigadiers" />
+    <EntitySet Name="destinations" EntityType="Self.destinations" />
+    <EntitySet Name="drivers" EntityType="Self.drivers" />
+    <EntitySet Name="foremens" EntityType="Self.foremens" />
+    <EntitySet Name="landchiefs" EntityType="Self.landchiefs" />
+    <EntitySet Name="masters" EntityType="Self.masters" />
+    <EntitySet Name="service" EntityType="Self.service" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
+    <EntitySet Name="transport" EntityType="Self.transport" />
+    <EntitySet Name="transport_type" EntityType="Self.transport_type" />
+    <AssociationSet Name="FK_brigadiers_brigades" Association="Self.FK_brigadiers_brigades">
+      <End Role="brigades" EntitySet="brigades" />
+      <End Role="brigadiers" EntitySet="brigadiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_drivers_brigades" Association="Self.FK_drivers_brigades">
+      <End Role="brigades" EntitySet="brigades" />
+      <End Role="drivers" EntitySet="drivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_service_brigades" Association="Self.FK_service_brigades">
+      <End Role="brigades" EntitySet="brigades" />
+      <End Role="service" EntitySet="service" />
+    </AssociationSet>
+    <AssociationSet Name="FK_masters_brigadiers" Association="Self.FK_masters_brigadiers">
+      <End Role="brigadiers" EntitySet="brigadiers" />
+      <End Role="masters" EntitySet="masters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transport_destinations" Association="Self.FK_transport_destinations">
+      <End Role="destinations" EntitySet="destinations" />
+      <End Role="transport" EntitySet="transport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transport_drivers" Association="Self.FK_transport_drivers">
+      <End Role="drivers" EntitySet="drivers" />
+      <End Role="transport" EntitySet="transport" />
+    </AssociationSet>
+    <AssociationSet Name="FK_foremens_masters" Association="Self.FK_foremens_masters">
+      <End Role="masters" EntitySet="masters" />
+      <End Role="foremens" EntitySet="foremens" />
+    </AssociationSet>
+    <AssociationSet Name="FK_landchiefs_foremens" Association="Self.FK_landchiefs_foremens">
+      <End Role="foremens" EntitySet="foremens" />
+      <End Role="landchiefs" EntitySet="landchiefs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transport_transport_type" Association="Self.FK_transport_transport_type">
+      <End Role="transport_type" EntitySet="transport_type" />
+      <End Role="transport" EntitySet="transport" />
+    </AssociationSet>
+    <FunctionImport Name="sp_alterdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_creatediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="version" Mode="In" Type="Int32" />
+      <Parameter Name="definition" Mode="In" Type="Binary" />
+    </FunctionImport>
+    <FunctionImport Name="sp_dropdiagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagramdefinition" ReturnType="Collection(autoenterpriseModel.sp_helpdiagramdefinition_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_helpdiagrams" ReturnType="Collection(autoenterpriseModel.sp_helpdiagrams_Result)">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+    </FunctionImport>
+    <FunctionImport Name="sp_renamediagram">
+      <Parameter Name="diagramname" Mode="In" Type="String" />
+      <Parameter Name="owner_id" Mode="In" Type="Int32" />
+      <Parameter Name="new_diagramname" Mode="In" Type="String" />
+    </FunctionImport>
+    <FunctionImport Name="sp_upgraddiagrams" />
+  </EntityContainer>
+  <ComplexType Name="sp_helpdiagramdefinition_Result">
+    <Property Type="Int32" Name="version" Nullable="true" />
+    <Property Type="Binary" Name="definition" Nullable="true" />
+  </ComplexType>
+  <ComplexType Name="sp_helpdiagrams_Result">
+    <Property Type="String" Name="Database" Nullable="true" MaxLength="128" />
+    <Property Type="String" Name="Name" Nullable="false" MaxLength="128" />
+    <Property Type="Int32" Name="ID" Nullable="false" />
+    <Property Type="String" Name="Owner" Nullable="true" MaxLength="128" />
+    <Property Type="Int32" Name="OwnerID" Nullable="false" />
+  </ComplexType>
+</Schema>

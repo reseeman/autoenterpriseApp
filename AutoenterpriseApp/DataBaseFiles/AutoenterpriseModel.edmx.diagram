@@ -1,0 +1,31 @@
+<?xml version="1.0" encoding="utf-8"?>
+<edmx:Edmx Version="3.0" xmlns:edmx="http://schemas.microsoft.com/ado/2009/11/edmx">
+ <!-- EF Designer content (DO NOT EDIT MANUALLY BELOW HERE) -->
+  <edmx:Designer xmlns="http://schemas.microsoft.com/ado/2009/11/edmx">
+    <!-- Diagram content (shape and connector positions) -->
+    <edmx:Diagrams>
+      <Diagram DiagramId="b862bfa4c6f944e0a1daee913a105baf" Name="Diagram1">
+        <EntityTypeShape EntityType="autoenterpriseModel.brigades" Width="1.5" PointX="0.75" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.brigadiers" Width="1.5" PointX="3" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.destinations" Width="1.5" PointX="6.75" PointY="8.625" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.drivers" Width="1.5" PointX="3" PointY="4.5" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.foremens" Width="1.5" PointX="7.5" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.landchiefs" Width="1.5" PointX="9.75" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.masters" Width="1.5" PointX="5.25" PointY="1.875" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.service" Width="1.5" PointX="3" PointY="7.25" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.sysdiagrams" Width="1.5" PointX="7.75" PointY="4.75" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.transport" Width="1.5" PointX="5.25" PointY="5" IsExpanded="true" />
+        <EntityTypeShape EntityType="autoenterpriseModel.transport_type" Width="1.5" PointX="3.875" PointY="9.5" IsExpanded="true" />
+        <AssociationConnector Association="autoenterpriseModel.FK_brigadiers_brigades" ManuallyRouted="false" />
+        <AssociationConnector Association="autoenterpriseModel.FK_drivers_brigades" ManuallyRouted="false" />
+        <AssociationConnector Association="autoenterpriseModel.FK_service_brigades" ManuallyRouted="false" />
+        <AssociationConnector Association="autoenterpriseModel.FK_masters_brigadiers" ManuallyRouted="false" />
+        <AssociationConnector Association="autoenterpriseModel.FK_transport_destinations" ManuallyRouted="false" />
+        <AssociationConnector Association="autoenterpriseModel.FK_transport_drivers" ManuallyRouted="false" />
+        <AssociationConnector Association="autoenterpriseModel.FK_foremens_masters" ManuallyRouted="false" />
+        <AssociationConnector Association="autoenterpriseModel.FK_landchiefs_foremens" ManuallyRouted="false" />
+        <AssociationConnector Association="autoenterpriseModel.FK_transport_transport_type" ManuallyRouted="false" />
+      </Diagram>
+    </edmx:Diagrams>
+  </edmx:Designer>
+</edmx:Edmx>

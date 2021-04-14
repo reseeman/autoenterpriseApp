@@ -1,0 +1,29 @@
+﻿<Window x:Class="AutoenterpriseApp.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:AutoenterpriseApp"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="800">
+    <Grid>
+        <!--Начало шапки-->
+        <DockPanel Background="Gray" Height="20" VerticalAlignment="Top">
+            <Menu DockPanel.Dock="Top">
+                <MenuItem Header="_Помощь">
+                    <MenuItem Header="О программе" Click="menuOpenAboutWindow"/>
+                </MenuItem>
+            </Menu>
+        </DockPanel>
+        <!--Конец шапки-->
+
+        <!--Начало тела-->
+        <Frame
+            NavigationUIVisibility="Hidden"
+            Name="FrmMain"
+            Grid.Row="1"
+            Grid.Column="0"
+            Margin="0 20 0 0"/>
+        <!--Конец тела-->
+    </Grid>
+</Window>
