@@ -22,9 +22,9 @@
   </EntityType>
   <EntityType Name="destinations">
     <Key>
-      <PropertyRef Name="idDestintaion" />
+      <PropertyRef Name="idDestination" />
     </Key>
-    <Property Name="idDestintaion" Type="Int32" Nullable="false" />
+    <Property Name="idDestination" Type="Int32" Nullable="false" />
     <Property Name="departureDestination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="terminalDestination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="codeDestination" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -166,7 +166,7 @@
     <End Role="transport" Type="Self.transport" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="destinations">
-        <PropertyRef Name="idDestintaion" />
+        <PropertyRef Name="idDestination" />
       </Principal>
       <Dependent Role="transport">
         <PropertyRef Name="idDestination" />

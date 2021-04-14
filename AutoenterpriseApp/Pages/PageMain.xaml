@@ -7,16 +7,35 @@
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageMain">
+    <Page.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Button">
+                <Setter Property="Width" Value="130"/>
+                <Setter Property="Height" Value="60"/>
+                <Setter Property="Margin" Value="5"/>
+            </Style>
+        </ResourceDictionary>
+    </Page.Resources>
     <Grid>
         <StackPanel
             Orientation="Horizontal"
             HorizontalAlignment="Center">
             <Button
-            Content="Добавление данных"
-            Click="buttonOpenAddPage"/>
+            Click="buttonOpenAddPage"
+            HorizontalContentAlignment="Center">
+                <TextBlock
+                    Text="Добавление данных"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"/>
+            </Button>
             <Button
-            Content="Просмотр и удаление данных"
-            Click="buttonOpenViewDeletePage"/>
+            Click="buttonOpenViewDeletePage"
+            HorizontalContentAlignment="Center">
+                <TextBlock
+                    Text="Просмотр и удаление, редактирование данных"
+                    TextWrapping="Wrap"
+                    TextAlignment="Center"/>
+            </Button>
         </StackPanel>
     </Grid>
 </Page>

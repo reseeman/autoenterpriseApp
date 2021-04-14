@@ -22,9 +22,9 @@
         </EntityType>
         <EntityType Name="destinations">
           <Key>
-            <PropertyRef Name="idDestintaion" />
+            <PropertyRef Name="idDestination" />
           </Key>
-          <Property Name="idDestintaion" Type="int" Nullable="false" />
+          <Property Name="idDestination" Type="int" Nullable="false" />
           <Property Name="departureDestination" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="terminalDestination" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="codeDestination" Type="nchar" MaxLength="10" />
@@ -177,7 +177,7 @@
           <End Role="transport" Type="Self.transport" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="destinations">
-              <PropertyRef Name="idDestintaion" />
+              <PropertyRef Name="idDestination" />
             </Principal>
             <Dependent Role="transport">
               <PropertyRef Name="idDestination" />
@@ -315,9 +315,9 @@
         </EntityType>
         <EntityType Name="destinations">
           <Key>
-            <PropertyRef Name="idDestintaion" />
+            <PropertyRef Name="idDestination" />
           </Key>
-          <Property Name="idDestintaion" Type="Int32" Nullable="false" />
+          <Property Name="idDestination" Type="Int32" Nullable="false" />
           <Property Name="departureDestination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="terminalDestination" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
           <Property Name="codeDestination" Type="String" MaxLength="10" FixedLength="true" Unicode="true" />
@@ -459,7 +459,7 @@
           <End Role="transport" Type="Self.transport" Multiplicity="*" />
           <ReferentialConstraint>
             <Principal Role="destinations">
-              <PropertyRef Name="idDestintaion" />
+              <PropertyRef Name="idDestination" />
             </Principal>
             <Dependent Role="transport">
               <PropertyRef Name="idDestination" />
@@ -630,7 +630,7 @@
           <EntitySetMapping Name="destinations">
             <EntityTypeMapping TypeName="autoenterpriseModel.destinations">
               <MappingFragment StoreEntitySet="destinations">
-                <ScalarProperty Name="idDestintaion" ColumnName="idDestintaion" />
+                <ScalarProperty Name="idDestination" ColumnName="idDestination" />
                 <ScalarProperty Name="departureDestination" ColumnName="departureDestination" />
                 <ScalarProperty Name="terminalDestination" ColumnName="terminalDestination" />
                 <ScalarProperty Name="codeDestination" ColumnName="codeDestination" />

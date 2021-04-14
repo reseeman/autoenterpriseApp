@@ -64,10 +64,20 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataBaseFiles\AutoenterpriseModel.cs">
-      <AutoGen>True</AutoGen>
+    <Compile Include="DataBaseFiles\AutoenterpriseModel.Context.cs">
       <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>autoenterpriseModel.Context.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseFiles\AutoenterpriseModel.cs">
       <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+    </Compile>
+    <Compile Include="DataBaseFiles\AutoenterpriseModel.Designer.cs">
+      <DesignTime>True</DesignTime>
+      <AutoGen>True</AutoGen>
+      <DependentUpon>autoenterpriseModel.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\brigades.cs">
       <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
@@ -110,6 +120,33 @@
     <Compile Include="DataBaseFiles\transport_type.cs">
       <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
     </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteBrigadier.xaml.cs">
+      <DependentUpon>PageViewDeleteBrigadier.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteDestination.xaml.cs">
+      <DependentUpon>PageViewDeleteDestination.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteDriver.xaml.cs">
+      <DependentUpon>PageViewDeleteDriver.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteForemen.xaml.cs">
+      <DependentUpon>PageViewDeleteForemen.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteLandchief.xaml.cs">
+      <DependentUpon>PageViewDeleteLandchief.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteMaster.xaml.cs">
+      <DependentUpon>PageViewDeleteMaster.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteRoute.xaml.cs">
+      <DependentUpon>PageViewDeleteRoute.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteService.xaml.cs">
+      <DependentUpon>PageViewDeleteService.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteTransportType.xaml.cs">
+      <DependentUpon>PageViewDeleteTransportType.xaml</DependentUpon>
+    </Compile>
     <Compile Include="Pages\PagesAdd\PageAddBrigadier.xaml.cs">
       <DependentUpon>PageAddBrigadier.xaml</DependentUpon>
     </Compile>
@@ -148,16 +185,6 @@
       <DependentUpon>App.xaml</DependentUpon>
       <SubType>Code</SubType>
     </Compile>
-    <Compile Include="DataBaseFiles\AutoenterpriseModel.Context.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutoenterpriseModel.Context.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBaseFiles\AutoenterpriseModel.Designer.cs">
-      <AutoGen>True</AutoGen>
-      <DesignTime>True</DesignTime>
-      <DependentUpon>AutoenterpriseModel.edmx</DependentUpon>
-    </Compile>
     <Compile Include="MainWindow.xaml.cs">
       <DependentUpon>MainWindow.xaml</DependentUpon>
       <SubType>Code</SubType>
@@ -169,6 +196,42 @@
     <Page Include="Pages\PageMain.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteBrigadier.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteDestination.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteDriver.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteForemen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteLandchief.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteMaster.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteRoute.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteService.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteTransportType.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
     </Page>
     <Page Include="Pages\PagesAdd\PageAddBrigadier.xaml">
       <SubType>Designer</SubType>
@@ -242,22 +305,22 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DataBaseFiles\AutoenterpriseModel.edmx">
+    <EntityDeploy Include="DataBaseFiles\autoenterpriseModel.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>AutoenterpriseModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>autoenterpriseModel.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataBaseFiles\AutoenterpriseModel.Context.tt">
+    <None Include="DataBaseFiles\autoenterpriseModel.Context.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AutoenterpriseModel.Context.cs</LastGenOutput>
-      <DependentUpon>AutoenterpriseModel.edmx</DependentUpon>
+      <DependentUpon>autoenterpriseModel.edmx</DependentUpon>
+      <LastGenOutput>autoenterpriseModel.Context.cs</LastGenOutput>
     </None>
     <None Include="DataBaseFiles\AutoenterpriseModel.edmx.diagram">
-      <DependentUpon>AutoenterpriseModel.edmx</DependentUpon>
+      <DependentUpon>autoenterpriseModel.edmx</DependentUpon>
     </None>
     <None Include="DataBaseFiles\AutoenterpriseModel.tt">
       <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>AutoenterpriseModel.edmx</DependentUpon>
       <LastGenOutput>AutoenterpriseModel.cs</LastGenOutput>
+      <DependentUpon>autoenterpriseModel.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">

@@ -17,9 +17,9 @@
   </EntityType>
   <EntityType Name="destinations">
     <Key>
-      <PropertyRef Name="idDestintaion" />
+      <PropertyRef Name="idDestination" />
     </Key>
-    <Property Name="idDestintaion" Type="int" Nullable="false" />
+    <Property Name="idDestination" Type="int" Nullable="false" />
     <Property Name="departureDestination" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="terminalDestination" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="codeDestination" Type="nchar" MaxLength="10" />
@@ -172,7 +172,7 @@
     <End Role="transport" Type="Self.transport" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="destinations">
-        <PropertyRef Name="idDestintaion" />
+        <PropertyRef Name="idDestination" />
       </Principal>
       <Dependent Role="transport">
         <PropertyRef Name="idDestination" />

@@ -20,7 +20,7 @@ namespace AutoenterpriseApp.DataBaseFiles
             this.transport = new HashSet<transport>();
         }
     
-        public int idDestintaion { get; set; }
+        public int idDestination { get; set; }
         public string departureDestination { get; set; }
         public string terminalDestination { get; set; }
         public string codeDestination { get; set; }

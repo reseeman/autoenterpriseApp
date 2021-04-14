@@ -21,7 +21,7 @@
     <EntitySetMapping Name="destinations">
       <EntityTypeMapping TypeName="autoenterpriseModel.destinations">
         <MappingFragment StoreEntitySet="destinations">
-          <ScalarProperty Name="idDestintaion" ColumnName="idDestintaion" />
+          <ScalarProperty Name="idDestination" ColumnName="idDestination" />
           <ScalarProperty Name="departureDestination" ColumnName="departureDestination" />
           <ScalarProperty Name="terminalDestination" ColumnName="terminalDestination" />
           <ScalarProperty Name="codeDestination" ColumnName="codeDestination" />

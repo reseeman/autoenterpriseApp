@@ -9,7 +9,7 @@
       Title="PageAddMaster">
     <Grid>
         <TextBlock
-            Text="Добавление типа мастера"
+            Text="Добавление мастера"
             HorizontalAlignment="Center"
             VerticalAlignment="Top"
             Margin="10"

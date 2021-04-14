@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\kursovaya0101\AutoenterpriseApp\App.xaml
-141445686610
+231131237658
 
-36-199554062
+45-1338730687
 181444203908
-MainWindow.xaml;Pages\PageAdd.xaml;Pages\PageMain.xaml;Pages\PagesAdd\PageAddBrigadier.xaml;Pages\PagesAdd\PageAddDestination.xaml;Pages\PagesAdd\PageAddDriver.xaml;Pages\PagesAdd\PageAddForemen.xaml;Pages\PagesAdd\PageAddLandchief.xaml;Pages\PagesAdd\PageAddMaster.xaml;Pages\PagesAdd\PageAddRoute.xaml;Pages\PagesAdd\PageAddService.xaml;Pages\PagesAdd\PageAddTransportType.xaml;Pages\PageViewDelete.xaml;Windows\WindowAbout.xaml;
+MainWindow.xaml;Pages\PageAdd.xaml;Pages\PageMain.xaml;Pages\PagesViewDelete\PageViewDeleteBrigadier.xaml;Pages\PagesViewDelete\PageViewDeleteDestination.xaml;Pages\PagesViewDelete\PageViewDeleteDriver.xaml;Pages\PagesViewDelete\PageViewDeleteForemen.xaml;Pages\PagesViewDelete\PageViewDeleteLandchief.xaml;Pages\PagesViewDelete\PageViewDeleteMaster.xaml;Pages\PagesViewDelete\PageViewDeleteRoute.xaml;Pages\PagesViewDelete\PageViewDeleteService.xaml;Pages\PagesViewDelete\PageViewDeleteTransportType.xaml;Pages\PagesAdd\PageAddBrigadier.xaml;Pages\PagesAdd\PageAddDestination.xaml;Pages\PagesAdd\PageAddDriver.xaml;Pages\PagesAdd\PageAddForemen.xaml;Pages\PagesAdd\PageAddLandchief.xaml;Pages\PagesAdd\PageAddMaster.xaml;Pages\PagesAdd\PageAddRoute.xaml;Pages\PagesAdd\PageAddService.xaml;Pages\PagesAdd\PageAddTransportType.xaml;Pages\PageViewDelete.xaml;Windows\WindowAbout.xaml;
 
 False
 
