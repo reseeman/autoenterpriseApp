@@ -4,7 +4,7 @@
   <edmx:Runtime>
     <!-- SSDL content -->
     <edmx:StorageModels>
-      <Schema Namespace="Хранилище autoenterpriseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+    <Schema Namespace="Хранилище autoenterpriseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
         <EntityType Name="brigades">
           <Key>
             <PropertyRef Name="idBrigade" />
@@ -16,7 +16,7 @@
           <Key>
             <PropertyRef Name="idBrigadier" />
           </Key>
-          <Property Name="idBrigadier" Type="int" Nullable="false" />
+          <Property Name="idBrigadier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameBrigadier" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="idBrigade" Type="int" Nullable="false" />
         </EntityType>
@@ -24,7 +24,7 @@
           <Key>
             <PropertyRef Name="idDestination" />
           </Key>
-          <Property Name="idDestination" Type="int" Nullable="false" />
+          <Property Name="idDestination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="departureDestination" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="terminalDestination" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="codeDestination" Type="nchar" MaxLength="10" />
@@ -33,7 +33,7 @@
           <Key>
             <PropertyRef Name="idDriver" />
           </Key>
-          <Property Name="idDriver" Type="int" Nullable="false" />
+          <Property Name="idDriver" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameDriver" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="idBrigade" Type="int" Nullable="false" />
         </EntityType>
@@ -41,7 +41,7 @@
           <Key>
             <PropertyRef Name="idForemen" />
           </Key>
-          <Property Name="idForemen" Type="int" Nullable="false" />
+          <Property Name="idForemen" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameForemen" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="idMaster" Type="int" Nullable="false" />
         </EntityType>
@@ -49,7 +49,7 @@
           <Key>
             <PropertyRef Name="idLandchief" />
           </Key>
-          <Property Name="idLandchief" Type="int" Nullable="false" />
+          <Property Name="idLandchief" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameLandchief" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="idForemen" Type="int" Nullable="false" />
         </EntityType>
@@ -57,7 +57,7 @@
           <Key>
             <PropertyRef Name="idMaster" />
           </Key>
-          <Property Name="idMaster" Type="int" Nullable="false" />
+          <Property Name="idMaster" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameMaster" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="idBrigadier" Type="int" Nullable="false" />
         </EntityType>
@@ -65,7 +65,7 @@
           <Key>
             <PropertyRef Name="idService" />
           </Key>
-          <Property Name="idService" Type="int" Nullable="false" />
+          <Property Name="idService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameService" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="idBrigade" Type="int" Nullable="false" />
         </EntityType>
@@ -83,7 +83,7 @@
           <Key>
             <PropertyRef Name="idTransport" />
           </Key>
-          <Property Name="idTransport" Type="int" Nullable="false" />
+          <Property Name="idTransport" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="mileageTransport" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="dateOfReceiptTransport" Type="date" />
           <Property Name="dateOfDeductionTransport" Type="date" />
@@ -96,7 +96,7 @@
           <Key>
             <PropertyRef Name="idTransportType" />
           </Key>
-          <Property Name="idTransportType" Type="int" Nullable="false" />
+          <Property Name="idTransportType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
           <Property Name="nameTransportType" Type="nvarchar" MaxLength="50" Nullable="false" />
           <Property Name="capacityTransportType" Type="int" Nullable="false" />
         </EntityType>
@@ -288,8 +288,7 @@
             <End Role="transport" EntitySet="transport" />
           </AssociationSet>
         </EntityContainer>
-      </Schema>
-    </edmx:StorageModels>
+      </Schema></edmx:StorageModels>
     <!-- CSDL content -->
     <edmx:ConceptualModels>
       <Schema Namespace="autoenterpriseModel" Alias="Self" annotation:UseStrongSpatialTypes="false" xmlns:annotation="http://schemas.microsoft.com/ado/2009/02/edm/annotation" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm">

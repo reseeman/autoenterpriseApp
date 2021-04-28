@@ -1,4 +1,4 @@
-﻿// Создание кода T4 для модели "D:\kursovaya0101\AutoenterpriseApp\DataBaseFiles\autoenterpriseModel.edmx" включено. 
+﻿// Создание кода T4 для модели "E:\kursovaya0101-main\AutoenterpriseApp\DataBaseFiles\autoenterpriseModel.edmx" включено. 
 // Чтобы включить формирование кода прежних версий, измените значение свойства "Стратегия создания кода" конструктора
 // на "Legacy ObjectContext". Это свойство доступно в окне "Свойства", если модель
 // открыта в конструкторе.

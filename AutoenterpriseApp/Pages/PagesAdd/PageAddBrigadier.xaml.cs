@@ -15,9 +15,9 @@ namespace AutoenterpriseApp.Pages.PagesAdd
         {
             InitializeComponent();
 
-            CmbBrigadeChoise.SelectedValuePath = "Id";
-            CmbBrigadeChoise.DisplayMemberPath = "Name";
-            CmbBrigadeChoise.ItemsSource = OdbConnectHelper.entObj.brigadiers.ToList();
+            CmbBrigadeChoise.SelectedValuePath = "idBrigade";
+            CmbBrigadeChoise.DisplayMemberPath = "nameBrigade";
+            CmbBrigadeChoise.ItemsSource = OdbConnectHelper.entObj.brigades.ToList();
         }
 
         private void buttonBack(object sender, RoutedEventArgs e)
@@ -31,10 +31,11 @@ namespace AutoenterpriseApp.Pages.PagesAdd
         {
             try
             {
+                //MessageBox.Show(CmbBrigadeChoise.SelectedValue.ToString());
                 brigadiers brgObj = new brigadiers()
                 {
                     nameBrigadier = TbxFIO.Text,
-                    idBrigade = CmbBrigadeChoise.SelectedItem as brigades
+                    idBrigade = Convert.ToInt32(CmbBrigadeChoise.SelectedValue)
                 };
 
                 OdbConnectHelper.entObj.brigadiers.Add(brgObj);
@@ -46,6 +47,8 @@ namespace AutoenterpriseApp.Pages.PagesAdd
                                 MessageBoxImage.Information
                                 );
                 FrameApp.frmObj.GoBack();
+
+                //SET IDENTITY_INSERT MyTable ON - при ошибке IDENTIY_OFF
             }
             catch (Exception ex)
             {
