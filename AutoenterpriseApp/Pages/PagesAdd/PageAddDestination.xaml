@@ -29,7 +29,7 @@
                 <TextBlock Width="120" Text="Код маршрута" TextAlignment="Center" VerticalAlignment="Center" TextWrapping="Wrap" FontSize="16"/>
                 <TextBox Name="TbxDestinationCode" Width="120" Height="25" MaxLength="3"/>
             </StackPanel>
-            <Button Name="btnAddDestination" Click="buttonAddDestination">
+            <Button Name="btnAddDestination" Click="buttonAddDestination" Width="120">
                 <TextBlock Text="Добавить маршрут" TextWrapping="Wrap"/>
             </Button>
         </StackPanel>

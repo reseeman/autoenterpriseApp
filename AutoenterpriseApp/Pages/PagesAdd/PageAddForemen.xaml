@@ -14,6 +14,23 @@
             VerticalAlignment="Top"
             Margin="10"
             FontSize="20"/>
+
+        <!--Начало тела-->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Vertical" Margin="5">
+                <TextBlock Text="ФИО" TextAlignment="Center" VerticalAlignment="Center" FontSize="16" Padding="5"/>
+                <TextBox Name="TbxFIO" Width="120" Height="25" MaxLength="24"/>
+            </StackPanel>
+            <StackPanel Orientation="Vertical" Margin="5" HorizontalAlignment="Center">
+                <TextBlock Text="Мастер" TextAlignment="Center" VerticalAlignment="Center" FontSize="16" Padding="5"/>
+                <ComboBox Name="CmbMasterChoise" Height="25" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+            <Button Name="btnAddForemen" Click="buttonAddForemen" Width="170">
+                <TextBlock Text="Добавить начальника цеха" TextWrapping="Wrap"/>
+            </Button>
+        </StackPanel>
+        <!--Конец тела-->
+
         <StackPanel
             Orientation="Horizontal"
             HorizontalAlignment="Left"

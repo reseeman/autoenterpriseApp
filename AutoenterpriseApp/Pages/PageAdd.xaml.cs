@@ -25,6 +25,7 @@ namespace AutoenterpriseApp.Pages
         public PageAdd()
         {
             InitializeComponent();
+            this.nextButton.IsEnabled = false;
         }
 
         private void buttonBack(object sender, RoutedEventArgs e)
@@ -66,10 +67,11 @@ namespace AutoenterpriseApp.Pages
             {
                 FrameApp.frmObj.Navigate(new PageAddService());
             }
-            else if (AddingChoise.SelectedIndex == 8) //Тип транспорта
-            {
-                FrameApp.frmObj.Navigate(new PageAddTransportType());
-            }
+        }
+
+        private void AddingChoise_SelectionChanged(object sender, SelectionChangedEventArgs e)
+        {
+            this.nextButton.IsEnabled = true;
         }
     }
 }

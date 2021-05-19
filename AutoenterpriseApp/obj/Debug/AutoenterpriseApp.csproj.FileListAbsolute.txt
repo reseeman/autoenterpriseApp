@@ -151,7 +151,6 @@ F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddLandchief.g.c
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddMaster.g.cs
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddRoute.g.cs
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddService.g.cs
-F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddTransportType.g.cs
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PageViewDelete.g.cs
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Windows\WindowAbout.g.cs
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\App.g.cs
@@ -188,7 +187,6 @@ F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddLandchief.bam
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddMaster.baml
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddRoute.baml
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddService.baml
-F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PagesAdd\PageAddTransportType.baml
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Pages\PageViewDelete.baml
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\Windows\WindowAbout.baml
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\AutoenterpriseApp.g.resources
@@ -196,3 +194,21 @@ F:\kursovaya0101\AutoenterpriseApp\obj\Debug\AutoenterpriseApp.Properties.Resour
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\AutoenterpriseApp.csproj.GenerateResource.cache
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\AutoenterpriseApp.csproj.CoreCompileInputs.cache
 F:\kursovaya0101\AutoenterpriseApp\obj\Debug\AutoenterpriseApp.csproj.CopyComplete
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\Xceed.Wpf.AvalonDock.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Aero.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.Metro.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\Xceed.Wpf.AvalonDock.Themes.VS2010.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\Xceed.Wpf.Toolkit.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\ru\EntityFramework.SqlServer.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\cs-CZ\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\de\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\es\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\fr\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\hu\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\it\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\ja-JP\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\pt-BR\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\ro\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\ru\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\sv\Xceed.Wpf.AvalonDock.resources.dll
+F:\kursovaya0101\AutoenterpriseApp\bin\Debug\zh-Hans\Xceed.Wpf.AvalonDock.resources.dll
