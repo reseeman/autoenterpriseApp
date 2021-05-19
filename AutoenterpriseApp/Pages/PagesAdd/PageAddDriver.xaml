@@ -14,6 +14,23 @@
             VerticalAlignment="Top"
             Margin="10"
             FontSize="20"/>
+
+        <!--Начало тела-->
+        <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
+            <StackPanel Orientation="Horizontal" Margin="5">
+                <TextBlock Width="120" Text="ФИО" TextAlignment="Right" VerticalAlignment="Center" FontSize="16" Padding="5"/>
+                <TextBox Name="TbxFIO" Width="120" Height="25" MaxLength="24"/>
+            </StackPanel>
+            <StackPanel Orientation="Horizontal" Margin="5" HorizontalAlignment="Center">
+                <TextBlock Width="120" Text="Бригада" TextAlignment="Right" VerticalAlignment="Center" FontSize="16" Padding="5"/>
+                <ComboBox Name="CmbBrigadeChoise" Height="25" Width="120" HorizontalContentAlignment="Center"/>
+            </StackPanel>
+            <Button Name="btnAddDriver" Click="buttonAddDriver">
+                <TextBlock Text="Добавить водителя" TextWrapping="Wrap"/>
+            </Button>
+        </StackPanel>
+        <!--Конец тела-->
+
         <StackPanel
             Orientation="Horizontal"
             HorizontalAlignment="Left"
