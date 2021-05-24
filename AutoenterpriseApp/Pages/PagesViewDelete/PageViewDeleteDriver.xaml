@@ -9,18 +9,17 @@
       Title="PageViewDeleteDriver">
     <Grid>
         <Grid.RowDefinitions>
-            <RowDefinition Height="70"/>
             <RowDefinition Height="320"/>
             <RowDefinition Height="Auto"/>
         </Grid.RowDefinitions>
-        <DataGrid AutoGenerateColumns="False" x:Name="driversGrid" CanUserAddRows="False" Grid.Row="1">
+        <DataGrid AutoGenerateColumns="False" x:Name="driversGrid" CanUserAddRows="False" Grid.Row="0">
             <DataGrid.Columns>
                 <DataGridTextColumn Binding="{Binding nameDriver}" Header="ФИО"/>
                 <DataGridTextColumn Binding="{Binding idBrigade}" Header="Бригада"/>
             </DataGrid.Columns>
         </DataGrid>
 
-        <StackPanel HorizontalAlignment="Center"  Grid.Row="2" Orientation="Horizontal">
+        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
             <Button Content="Назад" Click="buttonBack"/>
             <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
             <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />

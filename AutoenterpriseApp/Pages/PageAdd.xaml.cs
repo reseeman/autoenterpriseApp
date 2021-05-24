@@ -53,7 +53,7 @@ namespace AutoenterpriseApp.Pages
             }
             else if (AddingChoise.SelectedIndex == 4) //Начальник цеха
             {
-                FrameApp.frmObj.Navigate(new PageAddForemen());
+                FrameApp.frmObj.Navigate(new PageAddLandwork());
             }
             else if (AddingChoise.SelectedIndex == 5) //Бригадир
             {

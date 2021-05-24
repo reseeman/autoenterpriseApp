@@ -16,9 +16,9 @@ namespace AutoenterpriseApp.Pages.PagesAdd
         {
             InitializeComponent();
 
-            CmbForemenChoise.SelectedValuePath = "idForemen";
-            CmbForemenChoise.DisplayMemberPath = "nameForemen";
-            CmbForemenChoise.ItemsSource = OdbConnectHelper.entObj.foremens.ToList();
+            CmbForemenChoise.SelectedValuePath = "idLandwork";
+            CmbForemenChoise.DisplayMemberPath = "nameLandwork";
+            CmbForemenChoise.ItemsSource = OdbConnectHelper.entObj.landworks.ToList();
             this.TbxFIO.PreviewTextInput += new TextCompositionEventHandler(TbxString_PreviewTextInput);
         }
 
@@ -44,7 +44,7 @@ namespace AutoenterpriseApp.Pages.PagesAdd
                     landchiefs lndObj = new landchiefs()
                     {
                         nameLandchief = TbxFIO.Text,
-                        idForemen = Convert.ToInt32(CmbForemenChoise.SelectedValue)
+                        idLandwork = Convert.ToInt32(CmbForemenChoise.SelectedValue)
                     };
 
                     OdbConnectHelper.entObj.landchiefs.Add(lndObj);

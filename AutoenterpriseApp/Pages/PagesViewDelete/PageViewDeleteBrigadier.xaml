@@ -6,21 +6,28 @@
       xmlns:local="clr-namespace:AutoenterpriseApp.Pages.PagesAdd"
       mc:Ignorable="d" 
       d:DesignHeight="450" d:DesignWidth="800"
-      Title="PageViewDeleteBrigadier">
+      Title="Бригадиры">
     <Grid>
-        <TextBlock
-            Text="Просмотр бригадиров"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Margin="10"
-            FontSize="20"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="320"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name="brigadiersGrid" CanUserAddRows="False" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding nameBrigadier}" Header="ФИО"/>
+                <DataGridTextColumn Binding="{Binding idBrigade}" Header="Бригада"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+            <Button Content="Назад" Click="buttonBack"/>
+            <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
+            <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
+        </StackPanel>
         <StackPanel
             Orientation="Horizontal"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom">
-            <Button
-                Content="Назад"
-                Click="buttonBack"/>
         </StackPanel>
     </Grid>
 </Page>

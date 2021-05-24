@@ -18,7 +18,7 @@
         <StackPanel
             Orientation="Horizontal"
             HorizontalAlignment="Center">
-            <ComboBox Name="AddingChoise" HorizontalContentAlignment="Left" SelectionChanged="AddingChoise_SelectionChanged">
+            <ComboBox Name="AddingChoise" HorizontalContentAlignment="Center" SelectionChanged="AddingChoise_SelectionChanged">
                 <TextBlock>Маршрут</TextBlock>
                 <TextBlock>Рейс</TextBlock>
                 <TextBlock>Водитель</TextBlock>

@@ -40,7 +40,7 @@ namespace AutoenterpriseApp.Pages
             }
             else if (ViewDeleteChoise.SelectedIndex == 4) //Начальник цеха
             {
-                FrameApp.frmObj.Navigate(new PageViewDeleteForemen());
+                FrameApp.frmObj.Navigate(new PageViewDeleteLandwork());
             }
             else if (ViewDeleteChoise.SelectedIndex == 5) //Бригадир
             {

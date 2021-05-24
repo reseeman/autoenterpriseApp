@@ -43,7 +43,7 @@ namespace AutoenterpriseApp.Pages.PagesAdd
 
         void TbxInt_PreviewTextInput(object sender, TextCompositionEventArgs e)
         {
-            if (!Char.IsLetter(e.Text, 0)) e.Handled = true;
+            if (!Char.IsDigit(e.Text, 0)) e.Handled = true;
         }
 
         private void buttonBack(object sender, RoutedEventArgs e)
@@ -53,32 +53,40 @@ namespace AutoenterpriseApp.Pages.PagesAdd
 
         private void buttonAddRoute(object sender, RoutedEventArgs e)
         {
-            if (this.TbxBrand.Text != null && this.TbxMileage != null && this.CmbDriverChoise.SelectedValue != null && this.CmbTransportTypeChoise != null)
+            if (this.TbxBrand.Text != null && this.TbxMileage.Text != null && this.CmbDriverChoise.SelectedValue != null && this.CmbTransportTypeChoise.SelectedValue != null)
             {
                 try
                 {
                     //MessageBox.Show(CmbBrigadeChoise.SelectedValue.ToString());
-                    transport trnsptObj = new transport()
+                    routes rtsObj = new routes()
                     {
-                        mileageTransport = TbxMileage.Text,
+                        mileageTransport = Convert.ToInt32(TbxMileage.Text),
                         dateOfReceiptTransport = DateTime.Parse(TbxReceipt.Text),
                         dateOfDeductionTransport = DateTime.Parse(TbxDeduction.Text),
                         brandTransport = TbxBrand.Text,
+                        idDestination = Convert.ToInt32(TbxDestination.Text),
 
                         idDriver = Convert.ToInt32(CmbDriverChoise.SelectedValue),
                         idTransportType = Convert.ToInt32(CmbTransportTypeChoise.SelectedValue)
                     };
 
-                    OdbConnectHelper.entObj.transport.Add(trnsptObj);
-                    OdbConnectHelper.entObj.SaveChanges();
+                    if (this.TbxBrand.Text == "" || this.TbxMileage.Text == "" || this.CmbDriverChoise.SelectedValue == null || this.CmbTransportTypeChoise.SelectedValue == null || this.TbxDeduction.Text == "" || this.TbxReceipt.Text == "" || this.TbxDestination.Text == "")
+                    {
+                        MessageBox.Show("Не все данные введены!");
+                    }
+                    else
+                    {
+                        OdbConnectHelper.entObj.routes.Add(rtsObj);
+                        OdbConnectHelper.entObj.SaveChanges();
 
-                    MessageBox.Show("Рейс № " + trnsptObj.idTransport + " успешно добавлен!",
+                        MessageBox.Show("Рейс № " + rtsObj.idRoute + " успешно добавлен!",
                                     "Уведомление",
                                     MessageBoxButton.OK,
                                     MessageBoxImage.Information
                                     );
-                    FrameApp.frmObj.GoBack();
-
+                        FrameApp.frmObj.GoBack();
+                    }
+                    
                     //SET IDENTITY_INSERT MyTable ON - при ошибке IDENTIY_OFF
                 }
                 catch (Exception ex)

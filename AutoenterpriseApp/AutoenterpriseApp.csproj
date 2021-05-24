@@ -79,64 +79,76 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </ApplicationDefinition>
-    <Compile Include="DataBaseFiles\AutoenterpriseModel.Context.cs">
-      <DesignTime>True</DesignTime>
+    <Compile Include="DataBaseFiles\autoenterprise.Context.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>autoenterpriseModel.Context.tt</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>autoenterprise.Context.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseFiles\AutoenterpriseModel.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
-      <DesignTime>True</DesignTime>
+    <Compile Include="DataBaseFiles\autoenterprise.cs">
       <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseFiles\AutoenterpriseModel.Designer.cs">
-      <DesignTime>True</DesignTime>
+    <Compile Include="DataBaseFiles\autoenterprise.Designer.cs">
       <AutoGen>True</AutoGen>
-      <DependentUpon>autoenterpriseModel.edmx</DependentUpon>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>autoenterprise.edmx</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\brigades.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\brigadiers.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\destinations.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\drivers.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBaseFiles\foremens.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\FrameApp.cs" />
     <Compile Include="DataBaseFiles\landchiefs.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseFiles\landworks.cs">
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\masters.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\OdbConnectHelper.cs" />
+    <Compile Include="DataBaseFiles\routes.cs">
+      <DependentUpon>autoenterprise.tt</DependentUpon>
+    </Compile>
     <Compile Include="DataBaseFiles\service.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\sp_helpdiagramdefinition_Result.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\sp_helpdiagrams_Result.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\sysdiagrams.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
-    </Compile>
-    <Compile Include="DataBaseFiles\transport.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\transport_type.cs">
-      <DependentUpon>AutoenterpriseModel.tt</DependentUpon>
+      <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
+    <Compile Include="Models\Landchief.cs" />
+    <Compile Include="Models\LandchiefContext.cs" />
+    <Compile Include="Models\RouteContext.cs" />
+    <Compile Include="Models\Route.cs" />
+    <Compile Include="Models\Master.cs" />
+    <Compile Include="Models\Destination.cs" />
+    <Compile Include="Models\Brigadier.cs" />
+    <Compile Include="Models\MasterContext.cs" />
+    <Compile Include="Models\DestinationContext.cs" />
     <Compile Include="Models\Driver.cs" />
+    <Compile Include="Models\BrigadierContext.cs" />
     <Compile Include="Models\DriverContext.cs" />
+    <Compile Include="Models\Landwork.cs" />
+    <Compile Include="Models\LandworkContext.cs" />
     <Compile Include="Pages\PagesViewDelete\PageViewDeleteBrigadier.xaml.cs">
       <DependentUpon>PageViewDeleteBrigadier.xaml</DependentUpon>
     </Compile>
@@ -146,8 +158,8 @@
     <Compile Include="Pages\PagesViewDelete\PageViewDeleteDriver.xaml.cs">
       <DependentUpon>PageViewDeleteDriver.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PagesViewDelete\PageViewDeleteForemen.xaml.cs">
-      <DependentUpon>PageViewDeleteForemen.xaml</DependentUpon>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteLandwork.xaml.cs">
+      <DependentUpon>PageViewDeleteLandwork.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PagesViewDelete\PageViewDeleteLandchief.xaml.cs">
       <DependentUpon>PageViewDeleteLandchief.xaml</DependentUpon>
@@ -173,8 +185,8 @@
     <Compile Include="Pages\PagesAdd\PageAddDriver.xaml.cs">
       <DependentUpon>PageAddDriver.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PagesAdd\PageAddForemen.xaml.cs">
-      <DependentUpon>PageAddForemen.xaml</DependentUpon>
+    <Compile Include="Pages\PagesAdd\PageAddLandwork.xaml.cs">
+      <DependentUpon>PageAddLandwork.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PagesAdd\PageAddLandchief.xaml.cs">
       <DependentUpon>PageAddLandchief.xaml</DependentUpon>
@@ -223,9 +235,9 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PagesViewDelete\PageViewDeleteForemen.xaml">
-      <Generator>MSBuild:Compile</Generator>
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteLandwork.xaml">
       <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
     </Page>
     <Page Include="Pages\PagesViewDelete\PageViewDeleteLandchief.xaml">
       <Generator>MSBuild:Compile</Generator>
@@ -259,7 +271,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PagesAdd\PageAddForemen.xaml">
+    <Page Include="Pages\PagesAdd\PageAddLandwork.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
@@ -315,22 +327,12 @@
       <Generator>ResXFileCodeGenerator</Generator>
       <LastGenOutput>Resources.Designer.cs</LastGenOutput>
     </EmbeddedResource>
-    <EntityDeploy Include="DataBaseFiles\autoenterpriseModel.edmx">
+    <EntityDeploy Include="DataBaseFiles\autoenterprise.edmx">
       <Generator>EntityModelCodeGenerator</Generator>
-      <LastGenOutput>autoenterpriseModel.Designer.cs</LastGenOutput>
+      <LastGenOutput>autoenterprise.Designer.cs</LastGenOutput>
     </EntityDeploy>
-    <None Include="DataBaseFiles\autoenterpriseModel.Context.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <DependentUpon>autoenterpriseModel.edmx</DependentUpon>
-      <LastGenOutput>autoenterpriseModel.Context.cs</LastGenOutput>
-    </None>
-    <None Include="DataBaseFiles\AutoenterpriseModel.edmx.diagram">
-      <DependentUpon>autoenterpriseModel.edmx</DependentUpon>
-    </None>
-    <None Include="DataBaseFiles\AutoenterpriseModel.tt">
-      <Generator>TextTemplatingFileGenerator</Generator>
-      <LastGenOutput>AutoenterpriseModel.cs</LastGenOutput>
-      <DependentUpon>autoenterpriseModel.edmx</DependentUpon>
+    <None Include="DataBaseFiles\autoenterprise.edmx.diagram">
+      <DependentUpon>autoenterprise.edmx</DependentUpon>
     </None>
     <None Include="packages.config" />
     <None Include="Properties\Settings.settings">
@@ -343,6 +345,18 @@
   </ItemGroup>
   <ItemGroup>
     <Service Include="{508349B6-6B84-4DF5-91F0-309BEEBAD82D}" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="DataBaseFiles\autoenterprise.Context.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>autoenterprise.edmx</DependentUpon>
+      <LastGenOutput>autoenterprise.Context.cs</LastGenOutput>
+    </Content>
+    <Content Include="DataBaseFiles\autoenterprise.tt">
+      <Generator>TextTemplatingFileGenerator</Generator>
+      <DependentUpon>autoenterprise.edmx</DependentUpon>
+      <LastGenOutput>autoenterprise.cs</LastGenOutput>
+    </Content>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

@@ -16,8 +16,8 @@ namespace AutoenterpriseApp.DataBaseFiles
     {
         public int idLandchief { get; set; }
         public string nameLandchief { get; set; }
-        public int idForemen { get; set; }
+        public int idLandwork { get; set; }
     
-        public virtual foremens foremens { get; set; }
+        public virtual landworks landworks { get; set; }
     }
 }

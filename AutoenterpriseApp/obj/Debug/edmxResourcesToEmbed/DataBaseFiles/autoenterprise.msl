@@ -1,0 +1,135 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Mapping Space="C-S" xmlns="http://schemas.microsoft.com/ado/2009/11/mapping/cs">
+  <EntityContainerMapping StorageEntityContainer="Хранилище autoenterpriseModelContainer" CdmEntityContainer="autoenterpriseEntities">
+    <EntitySetMapping Name="brigades">
+      <EntityTypeMapping TypeName="autoenterpriseModel.brigades">
+        <MappingFragment StoreEntitySet="brigades">
+          <ScalarProperty Name="idBrigade" ColumnName="idBrigade" />
+          <ScalarProperty Name="nameBrigade" ColumnName="nameBrigade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="brigadiers">
+      <EntityTypeMapping TypeName="autoenterpriseModel.brigadiers">
+        <MappingFragment StoreEntitySet="brigadiers">
+          <ScalarProperty Name="idBrigadier" ColumnName="idBrigadier" />
+          <ScalarProperty Name="nameBrigadier" ColumnName="nameBrigadier" />
+          <ScalarProperty Name="idBrigade" ColumnName="idBrigade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="destinations">
+      <EntityTypeMapping TypeName="autoenterpriseModel.destinations">
+        <MappingFragment StoreEntitySet="destinations">
+          <ScalarProperty Name="idDestination" ColumnName="idDestination" />
+          <ScalarProperty Name="departureDestination" ColumnName="departureDestination" />
+          <ScalarProperty Name="terminalDestination" ColumnName="terminalDestination" />
+          <ScalarProperty Name="codeDestination" ColumnName="codeDestination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="drivers">
+      <EntityTypeMapping TypeName="autoenterpriseModel.drivers">
+        <MappingFragment StoreEntitySet="drivers">
+          <ScalarProperty Name="idDriver" ColumnName="idDriver" />
+          <ScalarProperty Name="nameDriver" ColumnName="nameDriver" />
+          <ScalarProperty Name="idBrigade" ColumnName="idBrigade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="landchiefs">
+      <EntityTypeMapping TypeName="autoenterpriseModel.landchiefs">
+        <MappingFragment StoreEntitySet="landchiefs">
+          <ScalarProperty Name="idLandchief" ColumnName="idLandchief" />
+          <ScalarProperty Name="nameLandchief" ColumnName="nameLandchief" />
+          <ScalarProperty Name="idLandwork" ColumnName="idLandwork" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="landworks">
+      <EntityTypeMapping TypeName="autoenterpriseModel.landworks">
+        <MappingFragment StoreEntitySet="landworks">
+          <ScalarProperty Name="idLandwork" ColumnName="idLandwork" />
+          <ScalarProperty Name="nameLandwork" ColumnName="nameLandwork" />
+          <ScalarProperty Name="idMaster" ColumnName="idMaster" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="masters">
+      <EntityTypeMapping TypeName="autoenterpriseModel.masters">
+        <MappingFragment StoreEntitySet="masters">
+          <ScalarProperty Name="idMaster" ColumnName="idMaster" />
+          <ScalarProperty Name="nameMaster" ColumnName="nameMaster" />
+          <ScalarProperty Name="idBrigadier" ColumnName="idBrigadier" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="routes">
+      <EntityTypeMapping TypeName="autoenterpriseModel.routes">
+        <MappingFragment StoreEntitySet="routes">
+          <ScalarProperty Name="idRoute" ColumnName="idRoute" />
+          <ScalarProperty Name="mileageTransport" ColumnName="mileageTransport" />
+          <ScalarProperty Name="dateOfReceiptTransport" ColumnName="dateOfReceiptTransport" />
+          <ScalarProperty Name="dateOfDeductionTransport" ColumnName="dateOfDeductionTransport" />
+          <ScalarProperty Name="brandTransport" ColumnName="brandTransport" />
+          <ScalarProperty Name="idDriver" ColumnName="idDriver" />
+          <ScalarProperty Name="idTransportType" ColumnName="idTransportType" />
+          <ScalarProperty Name="idDestination" ColumnName="idDestination" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="service">
+      <EntityTypeMapping TypeName="autoenterpriseModel.service">
+        <MappingFragment StoreEntitySet="service">
+          <ScalarProperty Name="idService" ColumnName="idService" />
+          <ScalarProperty Name="nameService" ColumnName="nameService" />
+          <ScalarProperty Name="idBrigade" ColumnName="idBrigade" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="sysdiagrams">
+      <EntityTypeMapping TypeName="autoenterpriseModel.sysdiagrams">
+        <MappingFragment StoreEntitySet="sysdiagrams">
+          <ScalarProperty Name="name" ColumnName="name" />
+          <ScalarProperty Name="principal_id" ColumnName="principal_id" />
+          <ScalarProperty Name="diagram_id" ColumnName="diagram_id" />
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <EntitySetMapping Name="transport_type">
+      <EntityTypeMapping TypeName="autoenterpriseModel.transport_type">
+        <MappingFragment StoreEntitySet="transport_type">
+          <ScalarProperty Name="idTransportType" ColumnName="idTransportType" />
+          <ScalarProperty Name="nameTransportType" ColumnName="nameTransportType" />
+          <ScalarProperty Name="capacityTransportType" ColumnName="capacityTransportType" />
+        </MappingFragment>
+      </EntityTypeMapping>
+    </EntitySetMapping>
+    <FunctionImportMapping FunctionImportName="sp_alterdiagram" FunctionName="Хранилище autoenterpriseModel.sp_alterdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_creatediagram" FunctionName="Хранилище autoenterpriseModel.sp_creatediagram" />
+    <FunctionImportMapping FunctionImportName="sp_dropdiagram" FunctionName="Хранилище autoenterpriseModel.sp_dropdiagram" />
+    <FunctionImportMapping FunctionImportName="sp_helpdiagramdefinition" FunctionName="Хранилище autoenterpriseModel.sp_helpdiagramdefinition">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="autoenterpriseModel.sp_helpdiagramdefinition_Result">
+          <ScalarProperty Name="version" ColumnName="version" />
+          <ScalarProperty Name="definition" ColumnName="definition" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_helpdiagrams" FunctionName="Хранилище autoenterpriseModel.sp_helpdiagrams">
+      <ResultMapping>
+        <ComplexTypeMapping TypeName="autoenterpriseModel.sp_helpdiagrams_Result">
+          <ScalarProperty Name="Database" ColumnName="Database" />
+          <ScalarProperty Name="Name" ColumnName="Name" />
+          <ScalarProperty Name="ID" ColumnName="ID" />
+          <ScalarProperty Name="Owner" ColumnName="Owner" />
+          <ScalarProperty Name="OwnerID" ColumnName="OwnerID" />
+        </ComplexTypeMapping>
+      </ResultMapping>
+    </FunctionImportMapping>
+    <FunctionImportMapping FunctionImportName="sp_renamediagram" FunctionName="Хранилище autoenterpriseModel.sp_renamediagram" />
+    <FunctionImportMapping FunctionImportName="sp_upgraddiagrams" FunctionName="Хранилище autoenterpriseModel.sp_upgraddiagrams" />
+  </EntityContainerMapping>
+</Mapping>

@@ -8,19 +8,26 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageViewDeleteMaster">
     <Grid>
-        <TextBlock
-            Text="Просмотр мастеров"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Margin="10"
-            FontSize="20"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="320"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name="mastersGrid" CanUserAddRows="False" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding nameMaster}" Header="ФИО"/>
+                <DataGridTextColumn Binding="{Binding idBrigadier}" Header="Бригадир"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+            <Button Content="Назад" Click="buttonBack"/>
+            <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
+            <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
+        </StackPanel>
         <StackPanel
             Orientation="Horizontal"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom">
-            <Button
-                Content="Назад"
-                Click="buttonBack"/>
         </StackPanel>
     </Grid>
 </Page>

@@ -17,7 +17,7 @@ namespace AutoenterpriseApp.DataBaseFiles
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public masters()
         {
-            this.foremens = new HashSet<foremens>();
+            this.landworks = new HashSet<landworks>();
         }
     
         public int idMaster { get; set; }
@@ -26,6 +26,6 @@ namespace AutoenterpriseApp.DataBaseFiles
     
         public virtual brigadiers brigadiers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<foremens> foremens { get; set; }
+        public virtual ICollection<landworks> landworks { get; set; }
     }
 }

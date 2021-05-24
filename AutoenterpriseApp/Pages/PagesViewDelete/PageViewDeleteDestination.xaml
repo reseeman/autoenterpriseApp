@@ -8,19 +8,27 @@
       d:DesignHeight="450" d:DesignWidth="800"
       Title="PageViewDeleteDestination">
     <Grid>
-        <TextBlock
-            Text="Просмотр маршрутов"
-            HorizontalAlignment="Center"
-            VerticalAlignment="Top"
-            Margin="10"
-            FontSize="20"/>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="320"/>
+            <RowDefinition Height="Auto"/>
+        </Grid.RowDefinitions>
+        <DataGrid AutoGenerateColumns="False" x:Name="destinationsGrid" CanUserAddRows="False" Grid.Row="0">
+            <DataGrid.Columns>
+                <DataGridTextColumn Binding="{Binding codeDestination}" Header="Номер маршрута"/>
+                <DataGridTextColumn Binding="{Binding departureDestination}" Header="Точка отправления"/>
+                <DataGridTextColumn Binding="{Binding terminalDestination}" Header="Пункт назначения"/>
+            </DataGrid.Columns>
+        </DataGrid>
+
+        <StackPanel HorizontalAlignment="Center"  Grid.Row="1" Orientation="Horizontal">
+            <Button Content="Назад" Click="buttonBack"/>
+            <Button x:Name="updateButton" Content="Обновить" Click="updateButton_Click" />
+            <Button x:Name="deleteButton" Content="Удалить" Click="deleteButton_Click" />
+        </StackPanel>
         <StackPanel
             Orientation="Horizontal"
             HorizontalAlignment="Left"
             VerticalAlignment="Bottom">
-            <Button
-                Content="Назад"
-                Click="buttonBack"/>
         </StackPanel>
     </Grid>
 </Page>

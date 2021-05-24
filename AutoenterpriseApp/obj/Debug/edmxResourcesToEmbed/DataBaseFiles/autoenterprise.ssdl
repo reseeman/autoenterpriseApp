@@ -1,0 +1,286 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Schema Namespace="Хранилище autoenterpriseModel" Provider="System.Data.SqlClient" ProviderManifestToken="2012" Alias="Self" xmlns:store="http://schemas.microsoft.com/ado/2007/12/edm/EntityStoreSchemaGenerator" xmlns:customannotation="http://schemas.microsoft.com/ado/2013/11/edm/customannotation" xmlns="http://schemas.microsoft.com/ado/2009/11/edm/ssdl">
+  <EntityType Name="brigades">
+    <Key>
+      <PropertyRef Name="idBrigade" />
+    </Key>
+    <Property Name="idBrigade" Type="int" Nullable="false" />
+    <Property Name="nameBrigade" Type="nvarchar" MaxLength="50" Nullable="false" />
+  </EntityType>
+  <EntityType Name="brigadiers">
+    <Key>
+      <PropertyRef Name="idBrigadier" />
+    </Key>
+    <Property Name="idBrigadier" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameBrigadier" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idBrigade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="destinations">
+    <Key>
+      <PropertyRef Name="idDestination" />
+    </Key>
+    <Property Name="idDestination" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="departureDestination" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="terminalDestination" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="codeDestination" Type="nchar" MaxLength="10" />
+  </EntityType>
+  <EntityType Name="drivers">
+    <Key>
+      <PropertyRef Name="idDriver" />
+    </Key>
+    <Property Name="idDriver" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameDriver" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idBrigade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="landchiefs">
+    <Key>
+      <PropertyRef Name="idLandchief" />
+    </Key>
+    <Property Name="idLandchief" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameLandchief" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idLandwork" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="landworks">
+    <Key>
+      <PropertyRef Name="idLandwork" />
+    </Key>
+    <Property Name="idLandwork" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameLandwork" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idMaster" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="masters">
+    <Key>
+      <PropertyRef Name="idMaster" />
+    </Key>
+    <Property Name="idMaster" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameMaster" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idBrigadier" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="routes">
+    <Key>
+      <PropertyRef Name="idRoute" />
+    </Key>
+    <Property Name="idRoute" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="mileageTransport" Type="int" Nullable="false" />
+    <Property Name="dateOfReceiptTransport" Type="date" />
+    <Property Name="dateOfDeductionTransport" Type="date" />
+    <Property Name="brandTransport" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idDriver" Type="int" Nullable="false" />
+    <Property Name="idTransportType" Type="int" Nullable="false" />
+    <Property Name="idDestination" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="service">
+    <Key>
+      <PropertyRef Name="idService" />
+    </Key>
+    <Property Name="idService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameService" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idBrigade" Type="int" Nullable="false" />
+  </EntityType>
+  <EntityType Name="sysdiagrams">
+    <Key>
+      <PropertyRef Name="diagram_id" />
+    </Key>
+    <Property Name="name" Type="nvarchar" MaxLength="128" Nullable="false" />
+    <Property Name="principal_id" Type="int" Nullable="false" />
+    <Property Name="diagram_id" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="version" Type="int" />
+    <Property Name="definition" Type="varbinary(max)" />
+  </EntityType>
+  <EntityType Name="transport_type">
+    <Key>
+      <PropertyRef Name="idTransportType" />
+    </Key>
+    <Property Name="idTransportType" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameTransportType" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="capacityTransportType" Type="int" Nullable="false" />
+  </EntityType>
+  <Association Name="FK_brigadiers_brigades">
+    <End Role="brigades" Type="Self.brigades" Multiplicity="1" />
+    <End Role="brigadiers" Type="Self.brigadiers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brigades">
+        <PropertyRef Name="idBrigade" />
+      </Principal>
+      <Dependent Role="brigadiers">
+        <PropertyRef Name="idBrigade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_drivers_brigades">
+    <End Role="brigades" Type="Self.brigades" Multiplicity="1" />
+    <End Role="drivers" Type="Self.drivers" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brigades">
+        <PropertyRef Name="idBrigade" />
+      </Principal>
+      <Dependent Role="drivers">
+        <PropertyRef Name="idBrigade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_foremens_masters">
+    <End Role="masters" Type="Self.masters" Multiplicity="1" />
+    <End Role="landworks" Type="Self.landworks" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="masters">
+        <PropertyRef Name="idMaster" />
+      </Principal>
+      <Dependent Role="landworks">
+        <PropertyRef Name="idMaster" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_landchiefs_foremens">
+    <End Role="landworks" Type="Self.landworks" Multiplicity="1" />
+    <End Role="landchiefs" Type="Self.landchiefs" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="landworks">
+        <PropertyRef Name="idLandwork" />
+      </Principal>
+      <Dependent Role="landchiefs">
+        <PropertyRef Name="idLandwork" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_masters_brigadiers">
+    <End Role="brigadiers" Type="Self.brigadiers" Multiplicity="1" />
+    <End Role="masters" Type="Self.masters" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brigadiers">
+        <PropertyRef Name="idBrigadier" />
+      </Principal>
+      <Dependent Role="masters">
+        <PropertyRef Name="idBrigadier" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_service_brigades">
+    <End Role="brigades" Type="Self.brigades" Multiplicity="1" />
+    <End Role="service" Type="Self.service" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="brigades">
+        <PropertyRef Name="idBrigade" />
+      </Principal>
+      <Dependent Role="service">
+        <PropertyRef Name="idBrigade" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transport_destinations">
+    <End Role="destinations" Type="Self.destinations" Multiplicity="1" />
+    <End Role="routes" Type="Self.routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="destinations">
+        <PropertyRef Name="idDestination" />
+      </Principal>
+      <Dependent Role="routes">
+        <PropertyRef Name="idDestination" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transport_drivers">
+    <End Role="drivers" Type="Self.drivers" Multiplicity="1" />
+    <End Role="routes" Type="Self.routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="drivers">
+        <PropertyRef Name="idDriver" />
+      </Principal>
+      <Dependent Role="routes">
+        <PropertyRef Name="idDriver" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Association Name="FK_transport_transport_type">
+    <End Role="transport_type" Type="Self.transport_type" Multiplicity="1" />
+    <End Role="routes" Type="Self.routes" Multiplicity="*" />
+    <ReferentialConstraint>
+      <Principal Role="transport_type">
+        <PropertyRef Name="idTransportType" />
+      </Principal>
+      <Dependent Role="routes">
+        <PropertyRef Name="idTransportType" />
+      </Dependent>
+    </ReferentialConstraint>
+  </Association>
+  <Function Name="fn_diagramobjects" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="true" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" ReturnType="int" />
+  <Function Name="sp_alterdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_creatediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="version" Type="int" Mode="In" />
+    <Parameter Name="definition" Type="varbinary(max)" Mode="In" />
+  </Function>
+  <Function Name="sp_dropdiagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagramdefinition" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_helpdiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+  </Function>
+  <Function Name="sp_renamediagram" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo">
+    <Parameter Name="diagramname" Type="nvarchar" Mode="In" />
+    <Parameter Name="owner_id" Type="int" Mode="In" />
+    <Parameter Name="new_diagramname" Type="nvarchar" Mode="In" />
+  </Function>
+  <Function Name="sp_upgraddiagrams" Aggregate="false" BuiltIn="false" NiladicFunction="false" IsComposable="false" ParameterTypeSemantics="AllowImplicitConversion" Schema="dbo" />
+  <EntityContainer Name="Хранилище autoenterpriseModelContainer">
+    <EntitySet Name="brigades" EntityType="Self.brigades" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="brigadiers" EntityType="Self.brigadiers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="destinations" EntityType="Self.destinations" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="drivers" EntityType="Self.drivers" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="landchiefs" EntityType="Self.landchiefs" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="landworks" EntityType="Self.landworks" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="masters" EntityType="Self.masters" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="routes" EntityType="Self.routes" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="service" EntityType="Self.service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="transport_type" EntityType="Self.transport_type" Schema="dbo" store:Type="Tables" />
+    <AssociationSet Name="FK_brigadiers_brigades" Association="Self.FK_brigadiers_brigades">
+      <End Role="brigades" EntitySet="brigades" />
+      <End Role="brigadiers" EntitySet="brigadiers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_drivers_brigades" Association="Self.FK_drivers_brigades">
+      <End Role="brigades" EntitySet="brigades" />
+      <End Role="drivers" EntitySet="drivers" />
+    </AssociationSet>
+    <AssociationSet Name="FK_foremens_masters" Association="Self.FK_foremens_masters">
+      <End Role="masters" EntitySet="masters" />
+      <End Role="landworks" EntitySet="landworks" />
+    </AssociationSet>
+    <AssociationSet Name="FK_landchiefs_foremens" Association="Self.FK_landchiefs_foremens">
+      <End Role="landworks" EntitySet="landworks" />
+      <End Role="landchiefs" EntitySet="landchiefs" />
+    </AssociationSet>
+    <AssociationSet Name="FK_masters_brigadiers" Association="Self.FK_masters_brigadiers">
+      <End Role="brigadiers" EntitySet="brigadiers" />
+      <End Role="masters" EntitySet="masters" />
+    </AssociationSet>
+    <AssociationSet Name="FK_service_brigades" Association="Self.FK_service_brigades">
+      <End Role="brigades" EntitySet="brigades" />
+      <End Role="service" EntitySet="service" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transport_destinations" Association="Self.FK_transport_destinations">
+      <End Role="destinations" EntitySet="destinations" />
+      <End Role="routes" EntitySet="routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transport_drivers" Association="Self.FK_transport_drivers">
+      <End Role="drivers" EntitySet="drivers" />
+      <End Role="routes" EntitySet="routes" />
+    </AssociationSet>
+    <AssociationSet Name="FK_transport_transport_type" Association="Self.FK_transport_transport_type">
+      <End Role="transport_type" EntitySet="transport_type" />
+      <End Role="routes" EntitySet="routes" />
+    </AssociationSet>
+  </EntityContainer>
+</Schema>

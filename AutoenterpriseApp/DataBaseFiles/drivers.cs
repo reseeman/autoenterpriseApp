@@ -17,7 +17,7 @@ namespace AutoenterpriseApp.DataBaseFiles
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2214:DoNotCallOverridableMethodsInConstructors")]
         public drivers()
         {
-            this.transport = new HashSet<transport>();
+            this.routes = new HashSet<routes>();
         }
     
         public int idDriver { get; set; }
@@ -26,6 +26,6 @@ namespace AutoenterpriseApp.DataBaseFiles
     
         public virtual brigades brigades { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<transport> transport { get; set; }
+        public virtual ICollection<routes> routes { get; set; }
     }
 }
