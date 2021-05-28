@@ -10,11 +10,11 @@ none
 false
 DEBUG;TRACE
 D:\kursovaya0101\AutoenterpriseApp\App.xaml
-221533663464
+211883353527
 21571888212
-59-660174851
+601026073188
 232139750227
-MainWindow.xaml;Pages\PageAdd.xaml;Pages\PageMain.xaml;Pages\PagesViewDelete\PageViewDeleteBrigadier.xaml;Pages\PagesViewDelete\PageViewDeleteDestination.xaml;Pages\PagesViewDelete\PageViewDeleteDriver.xaml;Pages\PagesViewDelete\PageViewDeleteLandwork.xaml;Pages\PagesViewDelete\PageViewDeleteLandchief.xaml;Pages\PagesViewDelete\PageViewDeleteMaster.xaml;Pages\PagesViewDelete\PageViewDeleteRoute.xaml;Pages\PagesViewDelete\PageViewDeleteService.xaml;Pages\PagesViewDelete\PageViewDeleteTransportType.xaml;Pages\PagesAdd\PageAddBrigadier.xaml;Pages\PagesAdd\PageAddDestination.xaml;Pages\PagesAdd\PageAddDriver.xaml;Pages\PagesAdd\PageAddLandwork.xaml;Pages\PagesAdd\PageAddLandchief.xaml;Pages\PagesAdd\PageAddMaster.xaml;Pages\PagesAdd\PageAddRoute.xaml;Pages\PagesAdd\PageAddService.xaml;Pages\PageViewDelete.xaml;Windows\WindowAbout.xaml;
+MainWindow.xaml;Pages\PageAdd.xaml;Pages\PageMain.xaml;Pages\PagesViewDelete\PageViewDeleteBrigadier.xaml;Pages\PagesViewDelete\PageViewDeleteDestination.xaml;Pages\PagesViewDelete\PageViewDeleteDriver.xaml;Pages\PagesViewDelete\PageViewDeleteLandwork.xaml;Pages\PagesViewDelete\PageViewDeleteLandchief.xaml;Pages\PagesViewDelete\PageViewDeleteMaster.xaml;Pages\PagesViewDelete\PageViewDeleteRoute.xaml;Pages\PagesViewDelete\PageViewDeleteStaff.xaml;Pages\PagesAdd\PageAddBrigadier.xaml;Pages\PagesAdd\PageAddDestination.xaml;Pages\PagesAdd\PageAddDriver.xaml;Pages\PagesAdd\PageAddLandwork.xaml;Pages\PagesAdd\PageAddLandchief.xaml;Pages\PagesAdd\PageAddMaster.xaml;Pages\PagesAdd\PageAddRoute.xaml;Pages\PagesAdd\PageAddStaff.xaml;Pages\PageViewDelete.xaml;Windows\WindowAbout.xaml;
 
-False
+True
 

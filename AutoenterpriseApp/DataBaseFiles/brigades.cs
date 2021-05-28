@@ -19,7 +19,7 @@ namespace AutoenterpriseApp.DataBaseFiles
         {
             this.brigadiers = new HashSet<brigadiers>();
             this.drivers = new HashSet<drivers>();
-            this.service = new HashSet<service>();
+            this.staffs = new HashSet<staffs>();
         }
     
         public int idBrigade { get; set; }
@@ -30,6 +30,6 @@ namespace AutoenterpriseApp.DataBaseFiles
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
         public virtual ICollection<drivers> drivers { get; set; }
         [System.Diagnostics.CodeAnalysis.SuppressMessage("Microsoft.Usage", "CA2227:CollectionPropertiesShouldBeReadOnly")]
-        public virtual ICollection<service> service { get; set; }
+        public virtual ICollection<staffs> staffs { get; set; }
     }
 }

@@ -8,7 +8,7 @@
     <Property Name="nameBrigade" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <NavigationProperty Name="brigadiers" Relationship="Self.FK_brigadiers_brigades" FromRole="brigades" ToRole="brigadiers" />
     <NavigationProperty Name="drivers" Relationship="Self.FK_drivers_brigades" FromRole="brigades" ToRole="drivers" />
-    <NavigationProperty Name="service" Relationship="Self.FK_service_brigades" FromRole="brigades" ToRole="service" />
+    <NavigationProperty Name="staffs" Relationship="Self.FK_service_brigades" FromRole="brigades" ToRole="staffs" />
   </EntityType>
   <EntityType Name="brigadiers">
     <Key>
@@ -85,14 +85,14 @@
     <NavigationProperty Name="drivers" Relationship="Self.FK_transport_drivers" FromRole="routes" ToRole="drivers" />
     <NavigationProperty Name="transport_type" Relationship="Self.FK_transport_transport_type" FromRole="routes" ToRole="transport_type" />
   </EntityType>
-  <EntityType Name="service">
+  <EntityType Name="staffs">
     <Key>
-      <PropertyRef Name="idService" />
+      <PropertyRef Name="idStaff" />
     </Key>
-    <Property Name="idService" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
-    <Property Name="nameService" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
+    <Property Name="idStaff" Type="Int32" Nullable="false" annotation:StoreGeneratedPattern="Identity" />
+    <Property Name="nameStaff" Type="String" MaxLength="50" FixedLength="false" Unicode="true" Nullable="false" />
     <Property Name="idBrigade" Type="Int32" Nullable="false" />
-    <NavigationProperty Name="brigades" Relationship="Self.FK_service_brigades" FromRole="service" ToRole="brigades" />
+    <NavigationProperty Name="brigades" Relationship="Self.FK_service_brigades" FromRole="staffs" ToRole="brigades" />
   </EntityType>
   <EntityType Name="sysdiagrams">
     <Key>
@@ -139,12 +139,12 @@
   </Association>
   <Association Name="FK_service_brigades">
     <End Role="brigades" Type="Self.brigades" Multiplicity="1" />
-    <End Role="service" Type="Self.service" Multiplicity="*" />
+    <End Role="staffs" Type="Self.staffs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="brigades">
         <PropertyRef Name="idBrigade" />
       </Principal>
-      <Dependent Role="service">
+      <Dependent Role="staffs">
         <PropertyRef Name="idBrigade" />
       </Dependent>
     </ReferentialConstraint>
@@ -230,7 +230,7 @@
     <EntitySet Name="landworks" EntityType="Self.landworks" />
     <EntitySet Name="masters" EntityType="Self.masters" />
     <EntitySet Name="routes" EntityType="Self.routes" />
-    <EntitySet Name="service" EntityType="Self.service" />
+    <EntitySet Name="staffs" EntityType="Self.staffs" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" />
     <EntitySet Name="transport_type" EntityType="Self.transport_type" />
     <AssociationSet Name="FK_brigadiers_brigades" Association="Self.FK_brigadiers_brigades">
@@ -243,7 +243,7 @@
     </AssociationSet>
     <AssociationSet Name="FK_service_brigades" Association="Self.FK_service_brigades">
       <End Role="brigades" EntitySet="brigades" />
-      <End Role="service" EntitySet="service" />
+      <End Role="staffs" EntitySet="staffs" />
     </AssociationSet>
     <AssociationSet Name="FK_masters_brigadiers" Association="Self.FK_masters_brigadiers">
       <End Role="brigadiers" EntitySet="brigadiers" />

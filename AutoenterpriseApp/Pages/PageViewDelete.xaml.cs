@@ -52,11 +52,7 @@ namespace AutoenterpriseApp.Pages
             }
             else if (ViewDeleteChoise.SelectedIndex == 7) //Работник сервиса
             {
-                FrameApp.frmObj.Navigate(new PageViewDeleteService());
-            }
-            else if (ViewDeleteChoise.SelectedIndex == 8) //Тип транспорта
-            {
-                FrameApp.frmObj.Navigate(new PageViewDeleteTransportType());
+                FrameApp.frmObj.Navigate(new PageViewDeleteStaff());
             }
         }
     }

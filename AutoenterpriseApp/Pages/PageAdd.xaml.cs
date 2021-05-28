@@ -65,7 +65,7 @@ namespace AutoenterpriseApp.Pages
             }
             else if (AddingChoise.SelectedIndex == 7) //Работник сервиса
             {
-                FrameApp.frmObj.Navigate(new PageAddService());
+                FrameApp.frmObj.Navigate(new PageAddStaff());
             }
         }
 

@@ -35,7 +35,7 @@ namespace AutoenterpriseApp.DataBaseFiles
         public virtual DbSet<landworks> landworks { get; set; }
         public virtual DbSet<masters> masters { get; set; }
         public virtual DbSet<routes> routes { get; set; }
-        public virtual DbSet<service> service { get; set; }
+        public virtual DbSet<staffs> staffs { get; set; }
         public virtual DbSet<sysdiagrams> sysdiagrams { get; set; }
         public virtual DbSet<transport_type> transport_type { get; set; }
     

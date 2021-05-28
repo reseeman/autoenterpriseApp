@@ -120,13 +120,13 @@
     <Compile Include="DataBaseFiles\routes.cs">
       <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
-    <Compile Include="DataBaseFiles\service.cs">
-      <DependentUpon>autoenterprise.tt</DependentUpon>
-    </Compile>
     <Compile Include="DataBaseFiles\sp_helpdiagramdefinition_Result.cs">
       <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\sp_helpdiagrams_Result.cs">
+      <DependentUpon>autoenterprise.tt</DependentUpon>
+    </Compile>
+    <Compile Include="DataBaseFiles\staffs.cs">
       <DependentUpon>autoenterprise.tt</DependentUpon>
     </Compile>
     <Compile Include="DataBaseFiles\sysdiagrams.cs">
@@ -149,6 +149,8 @@
     <Compile Include="Models\DriverContext.cs" />
     <Compile Include="Models\Landwork.cs" />
     <Compile Include="Models\LandworkContext.cs" />
+    <Compile Include="Models\Staff.cs" />
+    <Compile Include="Models\StaffContext.cs" />
     <Compile Include="Pages\PagesViewDelete\PageViewDeleteBrigadier.xaml.cs">
       <DependentUpon>PageViewDeleteBrigadier.xaml</DependentUpon>
     </Compile>
@@ -170,11 +172,8 @@
     <Compile Include="Pages\PagesViewDelete\PageViewDeleteRoute.xaml.cs">
       <DependentUpon>PageViewDeleteRoute.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PagesViewDelete\PageViewDeleteService.xaml.cs">
-      <DependentUpon>PageViewDeleteService.xaml</DependentUpon>
-    </Compile>
-    <Compile Include="Pages\PagesViewDelete\PageViewDeleteTransportType.xaml.cs">
-      <DependentUpon>PageViewDeleteTransportType.xaml</DependentUpon>
+    <Compile Include="Pages\PagesViewDelete\PageViewDeleteStaff.xaml.cs">
+      <DependentUpon>PageViewDeleteStaff.xaml</DependentUpon>
     </Compile>
     <Compile Include="Pages\PagesAdd\PageAddBrigadier.xaml.cs">
       <DependentUpon>PageAddBrigadier.xaml</DependentUpon>
@@ -197,8 +196,8 @@
     <Compile Include="Pages\PagesAdd\PageAddRoute.xaml.cs">
       <DependentUpon>PageAddRoute.xaml</DependentUpon>
     </Compile>
-    <Compile Include="Pages\PagesAdd\PageAddService.xaml.cs">
-      <DependentUpon>PageAddService.xaml</DependentUpon>
+    <Compile Include="Pages\PagesAdd\PageAddStaff.xaml.cs">
+      <DependentUpon>PageAddStaff.xaml</DependentUpon>
     </Compile>
     <Compile Include="Windows\WindowAbout.xaml.cs">
       <DependentUpon>WindowAbout.xaml</DependentUpon>
@@ -251,11 +250,7 @@
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
-    <Page Include="Pages\PagesViewDelete\PageViewDeleteService.xaml">
-      <Generator>MSBuild:Compile</Generator>
-      <SubType>Designer</SubType>
-    </Page>
-    <Page Include="Pages\PagesViewDelete\PageViewDeleteTransportType.xaml">
+    <Page Include="Pages\PagesViewDelete\PageViewDeleteStaff.xaml">
       <Generator>MSBuild:Compile</Generator>
       <SubType>Designer</SubType>
     </Page>
@@ -287,7 +282,7 @@
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>
-    <Page Include="Pages\PagesAdd\PageAddService.xaml">
+    <Page Include="Pages\PagesAdd\PageAddStaff.xaml">
       <SubType>Designer</SubType>
       <Generator>MSBuild:Compile</Generator>
     </Page>

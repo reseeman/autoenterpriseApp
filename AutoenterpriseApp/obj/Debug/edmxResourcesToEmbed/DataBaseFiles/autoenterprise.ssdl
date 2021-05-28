@@ -69,12 +69,12 @@
     <Property Name="idTransportType" Type="int" Nullable="false" />
     <Property Name="idDestination" Type="int" Nullable="false" />
   </EntityType>
-  <EntityType Name="service">
+  <EntityType Name="staffs">
     <Key>
-      <PropertyRef Name="idService" />
+      <PropertyRef Name="idStaff" />
     </Key>
-    <Property Name="idService" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
-    <Property Name="nameService" Type="nvarchar" MaxLength="50" Nullable="false" />
+    <Property Name="idStaff" Type="int" StoreGeneratedPattern="Identity" Nullable="false" />
+    <Property Name="nameStaff" Type="nvarchar" MaxLength="50" Nullable="false" />
     <Property Name="idBrigade" Type="int" Nullable="false" />
   </EntityType>
   <EntityType Name="sysdiagrams">
@@ -157,12 +157,12 @@
   </Association>
   <Association Name="FK_service_brigades">
     <End Role="brigades" Type="Self.brigades" Multiplicity="1" />
-    <End Role="service" Type="Self.service" Multiplicity="*" />
+    <End Role="staffs" Type="Self.staffs" Multiplicity="*" />
     <ReferentialConstraint>
       <Principal Role="brigades">
         <PropertyRef Name="idBrigade" />
       </Principal>
-      <Dependent Role="service">
+      <Dependent Role="staffs">
         <PropertyRef Name="idBrigade" />
       </Dependent>
     </ReferentialConstraint>
@@ -243,7 +243,7 @@
     <EntitySet Name="landworks" EntityType="Self.landworks" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="masters" EntityType="Self.masters" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="routes" EntityType="Self.routes" Schema="dbo" store:Type="Tables" />
-    <EntitySet Name="service" EntityType="Self.service" Schema="dbo" store:Type="Tables" />
+    <EntitySet Name="staffs" EntityType="Self.staffs" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="sysdiagrams" EntityType="Self.sysdiagrams" Schema="dbo" store:Type="Tables" />
     <EntitySet Name="transport_type" EntityType="Self.transport_type" Schema="dbo" store:Type="Tables" />
     <AssociationSet Name="FK_brigadiers_brigades" Association="Self.FK_brigadiers_brigades">
@@ -268,7 +268,7 @@
     </AssociationSet>
     <AssociationSet Name="FK_service_brigades" Association="Self.FK_service_brigades">
       <End Role="brigades" EntitySet="brigades" />
-      <End Role="service" EntitySet="service" />
+      <End Role="staffs" EntitySet="staffs" />
     </AssociationSet>
     <AssociationSet Name="FK_transport_destinations" Association="Self.FK_transport_destinations">
       <End Role="destinations" EntitySet="destinations" />

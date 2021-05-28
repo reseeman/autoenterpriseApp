@@ -27,7 +27,6 @@
                 <TextBlock>Бригадир</TextBlock>
                 <TextBlock>Начальник участка</TextBlock>
                 <TextBlock>Работник сервиса</TextBlock>
-                <TextBlock>Тип транспорта</TextBlock>
             </ComboBox>
         </StackPanel>
         <StackPanel

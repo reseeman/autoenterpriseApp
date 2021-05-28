@@ -78,11 +78,11 @@
         </MappingFragment>
       </EntityTypeMapping>
     </EntitySetMapping>
-    <EntitySetMapping Name="service">
-      <EntityTypeMapping TypeName="autoenterpriseModel.service">
-        <MappingFragment StoreEntitySet="service">
-          <ScalarProperty Name="idService" ColumnName="idService" />
-          <ScalarProperty Name="nameService" ColumnName="nameService" />
+    <EntitySetMapping Name="staffs">
+      <EntityTypeMapping TypeName="autoenterpriseModel.staffs">
+        <MappingFragment StoreEntitySet="staffs">
+          <ScalarProperty Name="idStaff" ColumnName="idStaff" />
+          <ScalarProperty Name="nameStaff" ColumnName="nameStaff" />
           <ScalarProperty Name="idBrigade" ColumnName="idBrigade" />
         </MappingFragment>
       </EntityTypeMapping>
